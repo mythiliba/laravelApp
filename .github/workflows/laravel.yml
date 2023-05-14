@@ -22,4 +22,4 @@ jobs:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USER_NAME }}
           key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          script: "./.scripts/deploy.sh"
+          script: "cd /var/www/html/laravelApp && ./.scripts/deploy.sh"
