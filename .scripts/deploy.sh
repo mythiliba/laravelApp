@@ -5,7 +5,6 @@ echo "Deployment started ..."
 
 # Enter maintenance mode or return true
 # if already is in maintenance mode
-cd laravelApp
 (php artisan down) || true
 
 # Pull the latest version of the app
