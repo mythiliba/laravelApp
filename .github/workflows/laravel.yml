@@ -21,4 +21,4 @@ jobs:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USER_NAME }}
           key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          script: "sudo -i; ./.scripts/deploy.sh"
+          script: "./.scripts/deploy.sh"
