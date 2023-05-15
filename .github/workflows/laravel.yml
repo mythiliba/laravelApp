@@ -22,6 +22,8 @@ jobs:
           php-version: '8.1.2'
       - name: Copy .env
         run: php -r "file_exists('.env') || copy('.env.example', '.env');"
+      - name: pull updates
+        run: git pull origin master
       - name: Install Dependencies
         run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
       - name: Generate key
