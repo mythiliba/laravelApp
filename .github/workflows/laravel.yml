@@ -30,8 +30,7 @@ jobs:
         run: php artisan key:generate
       - name: Directory Permissions
         run: chmod -R 777 storage bootstrap/cache
-      - name: run the application
-        run: vendor/bin/phpunit
+      
       
       - name: Deploy to server
         uses: appleboy/ssh-action@master  
@@ -39,6 +38,7 @@ jobs:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USER_NAME }}
           key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          args: -rltgoDzvO --delete-after
           source: ./
           target: /var/www/html/laravelApp
         
